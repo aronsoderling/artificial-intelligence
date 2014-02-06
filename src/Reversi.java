@@ -34,15 +34,15 @@ public class Reversi {
 		
 		printer = new StringBuilder(
 				"#-A-B-C-D-E-F-G-H-#\n"
-			+	"1                 #\n"
-			+	"2                 #\n"
-			+	"3                 #\n"
-			+	"4                 #\n"
-			+	"5                 #\n"
-			+	"6                 #\n"
-			+	"7                 #\n"
-			+	"8                 #\n"
-			+	"#-----------------#");
+			+	"1                 1\n"
+			+	"2                 2\n"
+			+	"3                 3\n"
+			+	"4                 4\n"
+			+	"5                 5\n"
+			+	"6                 6\n"
+			+	"7                 7\n"
+			+	"8                 8\n"
+			+	"#-A-B-C-D-E-F-G-H-#");
 	}
 	
 	public void yourMove(){
@@ -51,12 +51,30 @@ public class Reversi {
 		int col = (int) move.toUpperCase().charAt(0) - 'A' + 1;
 		int row = (int) Integer.parseInt(move.substring(1,2));
 		System.out.println("col: "+col+", row: "+row);
-		if(move(row, col, 1)){
+		if(move(row, col, PLAYER_YOU)){
 			
 		}else{
 			System.out.println("Illegal move");
 			yourMove();
 		}
+	}
+	
+	public void opponentMove(){
+		Scanner scan = new Scanner(System.in);
+		String move = scan.nextLine();
+		int col = (int) move.toUpperCase().charAt(0) - 'A' + 1;
+		int row = (int) Integer.parseInt(move.substring(1,2));
+		System.out.println("col: "+col+", row: "+row);
+		if(move(row, col, PLAYER_OPPONENT)){
+			
+		}else{
+			System.out.println("Illegal move");
+			yourMove();
+		}
+	}
+	
+	public void hasEnded(){
+		
 	}
 	
 	public int[] getValidMoves(){
@@ -127,10 +145,34 @@ public class Reversi {
 	
 	public boolean move(int move, int player){
 		if(isValidMove(move, player)){
+			if(isValidDirection(move, DIR_UPLEFT, player)) flip(move, DIR_UPLEFT, player);
+			if(isValidDirection(move, DIR_UP, player)) flip(move, DIR_UP, player);
+			if(isValidDirection(move, DIR_UPRIGHT, player)) flip(move, DIR_UPRIGHT, player);
+			if(isValidDirection(move, DIR_LEFT, player)) flip(move, DIR_LEFT, player);
+			if(isValidDirection(move, DIR_RIGHT, player)) flip(move, DIR_RIGHT, player);
+			if(isValidDirection(move, DIR_DOWNLEFT, player)) flip(move, DIR_DOWNLEFT, player);
+			if(isValidDirection(move, DIR_DOWN, player)) flip(move, DIR_DOWN, player);
+			if(isValidDirection(move, DIR_DOWNRIGHT, player)) flip(move, DIR_DOWNRIGHT, player);
 			board[move] = player;
 			return true;
 		}else{
 			return false;
+		}
+	}
+	
+	public void flip(int pos, int dir, int player){
+		int newPos = pos + dir;
+		switch(board[newPos]){
+		case PLAYER_OPPONENT: 
+			if(player == PLAYER_YOU){
+				board[newPos] = player;
+				flip(newPos, dir, player);
+			}
+		case PLAYER_YOU: 
+			if(player == PLAYER_OPPONENT){
+				board[newPos] = player;
+				flip(newPos, dir, player);
+			}
 		}
 	}
 	
@@ -154,7 +196,11 @@ public class Reversi {
 	public static void main(String[] args){
 		Reversi game = new Reversi();
 		game.print();
-		game.yourMove();
-		game.print();
+		while(true){
+			game.yourMove();
+			game.print();
+			game.opponentMove();
+			game.print();
+		}
 	}
 }
