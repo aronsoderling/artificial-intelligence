@@ -1,15 +1,42 @@
+import java.util.ArrayList;
 
-public class IntermediateNode extends Value {
-	double value;
-	boolean positive;
+
+public class IntermediateNode extends Node {
+	private Attribute attribute;
+	private ArrayList<Node> children;
 	
-	public IntermediateNode(double value, boolean positive) {
-		this.value = value;
-		this.positive = positive;
+	public IntermediateNode(Attribute a) {
+		attribute = a;
 	}
 	
 	public String toString(){
-		return value+( (positive)?"+":"-" );
+		StringBuilder sb = new StringBuilder();
+		
+		for(Value v : attribute.values){
+			if(v instanceof DiscreteValue){
+				DiscreteValue dv = (DiscreteValue)v;
+				sb.append(attribute.name);
+				sb.append(" = ");
+				sb.append(dv.name);
+				sb.append("\n\t");
+				for(Node n : children){
+					sb.append(n.toString());
+					sb.append("\n\t");
+				}
+			}else{
+				ContinuousValue cv = (ContinuousValue)v;
+				sb.append(attribute.name);
+				sb.append(" = ");
+				sb.append(cv.);
+				sb.append("\n\t");
+				for(Node n : children){
+					sb.append(n.toString());
+					sb.append("\n\t");
+				}
+			}
+		}
+		
+		return sb.toString();
 	}
 
 	@Override

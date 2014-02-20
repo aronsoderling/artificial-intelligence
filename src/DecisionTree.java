@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class DecisionTree {
@@ -67,6 +68,9 @@ public class DecisionTree {
 				e.printStackTrace();
 			}
 		}
+		for(Attribute a : attributes){
+			a.calculateSplit();
+		}
 		System.out.println(attributes);// + " ("+v+")");
 	}
 
@@ -88,7 +92,7 @@ public class DecisionTree {
 		System.out.println(a.name + ": " + a.values);// + " ("+v+")");
 	}
 
-	private Node dtl(){
+	private Node dtl(List<Value> examples, List<Attribute> attributes, List<Value> parentExamples){
 		if(examples.isEmpty()){
 			return pluralityValue(parentExamples);
 		}else if(examples.allPositive()){
@@ -107,12 +111,21 @@ public class DecisionTree {
 					maxGain = gain;
 				}
 			}
-			Node node = new Node();
+			Node tree = new Node();
 			for(){
 				
 			}
 			return node;
 		}
+	}
+	private int informationGain(Attribute a, List<Value> examples) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	private Node pluralityValue(List<Value> parentExamples) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	private class Node{
 		

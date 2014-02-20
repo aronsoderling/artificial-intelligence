@@ -1,5 +1,5 @@
 
-public class EndNode extends Value {
+public class EndNode extends Node {
 	String name;
 	int positives;
 	int negatives;

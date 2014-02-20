@@ -5,6 +5,7 @@ class Attribute{
 	String name;
 	ArrayList<Value> values;
 	boolean isDiscrete;
+	public int split;
 
 	public Attribute(String n, String[] val){
 		name = n;
@@ -38,5 +39,17 @@ class Attribute{
 	
 	public String toString(){
 		return name+"["+values.toString()+"]";
+	}
+	
+	public void calculateSplit(){
+		split = 0;
+		for(Value v : values){
+			if(v instanceof ContinuousValue){
+				ContinuousValue cv = ((ContinuousValue) v);
+				split += cv.value;
+			}
+		}
+		split /= values.size();
+		
 	}
 }
