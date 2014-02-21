@@ -4,7 +4,6 @@ import java.util.List;
 
 class Attribute{
 	String name;
-	ArrayList<Value> values;
 	boolean isDiscrete;
 	public int split;
 
