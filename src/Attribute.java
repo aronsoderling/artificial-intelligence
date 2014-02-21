@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 
 class Attribute{
@@ -38,10 +39,10 @@ class Attribute{
 	}
 	
 	public String toString(){
-		return name+"["+values.toString()+"]";
+		return name+values.toString();
 	}
 	
-	public void calculateSplit(){
+	private void calculateSplit(){
 		split = 0;
 		for(Value v : values){
 			if(v instanceof ContinuousValue){
@@ -51,5 +52,36 @@ class Attribute{
 		}
 		split /= values.size();
 		
+	}
+
+	public void discretize() {
+		if(!isDiscrete){
+			calculateSplit();
+			List<Value> continuous = (List<Value>) values.clone();
+			values.clear();
+
+			DiscreteValue above = new DiscreteValue("above split");
+			DiscreteValue below = new DiscreteValue("below split");
+			values.add(above);
+			values.add(below);
+			
+			for(Value v : continuous){
+				ContinuousValue cv = (ContinuousValue)v;
+				if(cv.value > split){
+					if(cv.positive){
+						above.positives++;
+					}else{
+						above.negatives++;
+					}
+				}else{
+					if(cv.positive){
+						below.positives++;
+					}else{
+						below.negatives++;
+					}
+				}
+			}
+			
+		}
 	}
 }

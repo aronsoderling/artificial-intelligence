@@ -10,6 +10,7 @@ import java.util.List;
 
 public class DecisionTree {
 	private ArrayList<Attribute> attributes;
+	private ArrayList<Line> lines;
 
 	public DecisionTree(String filename){
 		attributes = new ArrayList<Attribute>();
@@ -18,6 +19,7 @@ public class DecisionTree {
 			br = new BufferedReader(new FileReader(filename));
 			String line = br.readLine();
 
+			int lineCounter = 0;
 			while (line != null) {
 				if(line.length() > 0){
 					char startChar = line.charAt(0);
@@ -69,7 +71,7 @@ public class DecisionTree {
 			}
 		}
 		for(Attribute a : attributes){
-			a.calculateSplit();
+			a.discretize();
 		}
 		System.out.println(attributes);// + " ("+v+")");
 	}
@@ -92,17 +94,17 @@ public class DecisionTree {
 		System.out.println(a.name + ": " + a.values);// + " ("+v+")");
 	}
 
-	private Node dtl(List<Value> examples, List<Attribute> attributes, List<Value> parentExamples){
+	private Node dtl(List<Line> examples, List<Attribute> attributes, List<Line> parentExamples){
 		if(examples.isEmpty()){
 			return pluralityValue(parentExamples);
-		}else if(examples.allPositive()){
+		}else if(allPositive(examples)){
 			return new Node(true);
-		}else if(examples.allNegative()){
+		}else if(allNegative(examples)){
 			return new Node(false);
 		}else if(attributes.isEmpty()){
 			return pluralityValue(examples);
 		}else{
-			Attribute A;
+			Attribute A = null;
 			int maxGain = Integer.MIN_VALUE;
 			for(Attribute a: attributes){
 				int gain = informationGain(a, examples);
@@ -112,18 +114,33 @@ public class DecisionTree {
 				}
 			}
 			Node tree = new Node();
-			for(){
-				
+			for(Value vk : A.values){
+				List<Line> exs = new ArrayList<Line>();
+				for(Line l : examples){
+					if(l.getValue(A) == vk){
+						exs.add(l);
+					}
+				}
 			}
-			return node;
+			return tree;
 		}
 	}
-	private int informationGain(Attribute a, List<Value> examples) {
+	private boolean allNegative(List<Line> examples) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	private boolean allPositive(List<Line> examples) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	private int informationGain(Attribute a, List<Line> examples) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	private Node pluralityValue(List<Value> parentExamples) {
+	private Node pluralityValue(List<Line> parentExamples) {
 		// TODO Auto-generated method stub
 		return null;
 	}

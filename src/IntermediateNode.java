@@ -24,15 +24,7 @@ public class IntermediateNode extends Node {
 					sb.append("\n\t");
 				}
 			}else{
-				ContinuousValue cv = (ContinuousValue)v;
-				sb.append(attribute.name);
-				sb.append(" = ");
-				sb.append(cv.);
-				sb.append("\n\t");
-				for(Node n : children){
-					sb.append(n.toString());
-					sb.append("\n\t");
-				}
+				throw new RuntimeException("YOU SHALL NOT TOSTRING BEFORE YOU DISCRETIZE!");
 			}
 		}
 		
