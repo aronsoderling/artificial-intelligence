@@ -9,17 +9,17 @@ import java.util.List;
 
 
 public class DecisionTree {
-	private ArrayList<Attribute> attributes;
-	private ArrayList<Line> lines;
+	private ArrayList<Attribute> attributes = new ArrayList<Attribute>();
+	private ArrayList<Line> lines = new ArrayList<Line>();
 
 	public DecisionTree(String filename){
-		attributes = new ArrayList<Attribute>();
+		ArrayList<String[]> temp = new ArrayList<String[]>();
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(filename));
 			String line = br.readLine();
 
-			int lineCounter = 0;
+			int attributeIndex = 0;
 			while (line != null) {
 				if(line.length() > 0){
 					char startChar = line.charAt(0);
@@ -37,20 +37,13 @@ public class DecisionTree {
 						}
 
 						if(type.equals("attribute")){
-							addAttribute(line.substring(end+1, line.length()));
+							addAttribute(line.substring(end+1, line.length()), attributeIndex);
+							attributeIndex++;
 						}else if(type.equals("data")){
 							line = br.readLine();
 							while (line != null) {
 								if(line.length() > 0){
-									String[] d = line.split(",");
-									boolean positive = d[ d.length-1 ].equals("yes");
-									for(int i=0; i<d.length-1; i++){
-										if(positive){
-											attributes.get(i).addPositiveToValue(d[i]);
-										}else{
-											attributes.get(i).addNegativeToValue(d[i]);
-										}
-									}
+									temp.add(line.split(","));
 								}
 								line = br.readLine();
 							}
@@ -70,13 +63,39 @@ public class DecisionTree {
 				e.printStackTrace();
 			}
 		}
+		int i = 0;
+		double[] split = new double[attributes.size()];
 		for(Attribute a : attributes){
-			a.discretize();
+			if(!a.isDiscrete){
+				for(String[] s : temp){
+					split[i] += Double.parseDouble(s[i]);
+				}
+				split[i] /= temp.size();
+				
+				for(String[] s : temp){
+					if(Double.parseDouble(s[i]) > split[i]){
+						s[i] = "above";
+					}else{
+						s[i] = "below";
+					}
+				}
+			}
+			i++;
 		}
+		
+		for(String[] s : temp){
+			Line l = new Line(s);
+			lines.add(l);
+		}
+		
 		System.out.println(attributes);// + " ("+v+")");
+		
+		IntermediateNode root = (IntermediateNode)dtl(lines, attributes, lines);
+		System.out.println(root);
 	}
 
-	private void addAttribute(String line) {
+	// Returns true if discrete, false if continuous
+	private void addAttribute(String line, int index) {
 		int start = 0;
 		int end = line.indexOf(' ', start);
 		String name = line.substring(start, end);
@@ -89,72 +108,111 @@ public class DecisionTree {
 		}else if(line.substring(start, line.length()).equals("real")){
 			// real, do nothing
 		}
-		Attribute a = new Attribute(name, values);
+		Attribute a = new Attribute(name, values, index);
 		attributes.add(a);
-		System.out.println(a.name + ": " + a.values);// + " ("+v+")");
+		//System.out.println(a.name + ": " + a.values);// + " ("+v+")");
 	}
-
-	private Node dtl(List<Line> examples, List<Attribute> attributes, List<Line> parentExamples){
+	private Node dtl(List<Line> examples, ArrayList<Attribute> attributes, List<Line> parentExamples){
 		if(examples.isEmpty()){
 			return pluralityValue(parentExamples);
 		}else if(allPositive(examples)){
-			return new Node(true);
+			return new EndNode("Yes");
 		}else if(allNegative(examples)){
-			return new Node(false);
+			return new EndNode("No");
 		}else if(attributes.isEmpty()){
 			return pluralityValue(examples);
 		}else{
 			Attribute A = null;
-			int maxGain = Integer.MIN_VALUE;
+			double maxGain = Double.MIN_VALUE;
 			for(Attribute a: attributes){
-				int gain = informationGain(a, examples);
+				double gain = informationGain(a, examples);
 				if(gain > maxGain){
 					A = a;
 					maxGain = gain;
 				}
 			}
-			Node tree = new Node();
-			for(Value vk : A.values){
+			ArrayList<Attribute> attClone = (ArrayList<Attribute>) attributes.clone();
+			attClone.remove(A);
+			IntermediateNode tree = new IntermediateNode(A.name, A.getValues());
+			for(String vk : A.getValues()){
 				List<Line> exs = new ArrayList<Line>();
 				for(Line l : examples){
-					if(l.getValue(A) == vk){
+					if(l.getValue(A).equals(vk)){
 						exs.add(l);
 					}
 				}
+				Node subtree = dtl(exs, attClone, examples);
+				tree.add(subtree);
 			}
 			return tree;
 		}
 	}
+	
+	private int[] countPosAndNeg(List<Line> examples) {
+		int[] posneg = new int[]{0, 0};
+		for (Line line : examples) {
+			if(line.getLastValue().equals("yes")){
+				posneg[0]++;
+			}else{
+				posneg[1]++;
+			}
+		}
+		return posneg;
+	}
+	
 	private boolean allNegative(List<Line> examples) {
-		// TODO Auto-generated method stub
-		return false;
+		int[] posneg = countPosAndNeg(examples);
+		return posneg[0] == 0;
 	}
 
 	private boolean allPositive(List<Line> examples) {
-		// TODO Auto-generated method stub
-		return false;
+		int[] posneg = countPosAndNeg(examples);
+		return posneg[1] == 0;
 	}
 
-	private int informationGain(Attribute a, List<Line> examples) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	private Node pluralityValue(List<Line> parentExamples) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	private class Node{
+	private double informationGain(Attribute a, List<Line> examples) {
+		double gain = entropy(examples);
+		for(String v: a.getValues()){
+			List<Line> exs = new ArrayList<Line>(); 
+			for(Line l: examples){
+				if(l.getValue(a).equals(v)){
+					exs.add(l);
+				}
+			}	
+			gain -= entropy(exs) * exs.size() / examples.size();
+		}
 		
-		private Node(boolean b){
-			
+		return gain;
+	}
+	
+	private double entropy(List<Line> exs){
+		int[] posneg = countPosAndNeg(exs);
+		int p = posneg[0];
+		int n = posneg[1];
+		double x = p / (double)(p+n);
+		if(posneg[0] == 0 || posneg[1] == 0){
+			return 0;
 		}
-		private Node(){
-			
+		double entropy = - x * log2(x) - (1 - x) * log2(1-x); 
+		return entropy;
+	}
+	private static double log2(double x){
+		return Math.log(x) / Math.log(2);
+	}
+
+	private EndNode pluralityValue(List<Line> examples) {
+		int count = 0;
+		for (Line line : examples) {
+			if(line.getLastValue().equals("yes")){
+				count++;
+			}else{
+				count--;
+			}
 		}
+		return new EndNode( (count>0) ? "yes" : "no");
 	}
 	
 	public static void main(String[] args){
-		DecisionTree d = new DecisionTree("weather.arff");
+		DecisionTree d = new DecisionTree("weather2.arff");
 	}
 }

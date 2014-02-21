@@ -1,39 +1,45 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class IntermediateNode extends Node {
-	private Attribute attribute;
-	private ArrayList<Node> children;
+	private String s;
+	private ArrayList<Node> children = new ArrayList<Node>();
+	private List<String> branchNames;
 	
-	public IntermediateNode(Attribute a) {
-		attribute = a;
+	public IntermediateNode(String s, String[] strings) {
+		this.s = s;
+		branchNames = Arrays.asList(strings);
 	}
 	
 	public String toString(){
-		StringBuilder sb = new StringBuilder();
-		
-		for(Value v : attribute.values){
-			if(v instanceof DiscreteValue){
-				DiscreteValue dv = (DiscreteValue)v;
-				sb.append(attribute.name);
-				sb.append(" = ");
-				sb.append(dv.name);
-				sb.append("\n\t");
-				for(Node n : children){
-					sb.append(n.toString());
-					sb.append("\n\t");
-				}
+		String r = "";
+		int i = 0;
+		for(Node n : children){
+			String b =  n.toString();
+			r += s + " = " + branchNames.get(i);
+			if(n instanceof EndNode){
+				r += " : " + b + "\n";
 			}else{
-				throw new RuntimeException("YOU SHALL NOT TOSTRING BEFORE YOU DISCRETIZE!");
+				b = b.replaceAll("(?m)^", "\t");
+				r += "\n" + b;
 			}
+			//r += "\n";
+			
+			i++;
 		}
 		
-		return sb.toString();
+		return r;
 	}
 
 	@Override
 	public boolean equals(Object o) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public void add(Node subtree) {
+		children.add(subtree);
 	}
 }

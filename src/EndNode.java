@@ -9,7 +9,7 @@ public class EndNode extends Node {
 	}
 	
 	public String toString(){
-		return name +"["+positives+","+negatives+"]";
+		return name;
 	}
 
 	public boolean equals(Object o){

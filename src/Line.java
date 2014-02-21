@@ -1,16 +1,19 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Line {
-	ArrayList<Attribute> attributes;
-	public Line(){
-		
+	String[] values;
+	public Line(String[] l){
+		values = l;
 	}
-	public void addAttribute(){
-		
+	public String getValue(Attribute a) {
+		return values[a.getIndex()];
 	}
-	public Value getValue(Attribute a) {
-		// TODO Auto-generated method stub
-		return null;
+	public String getLastValue() {
+		return values[ values.length - 1 ];
+	}
+	public String toString(){
+		return Arrays.toString(values);
 	}
 }

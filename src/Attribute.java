@@ -6,55 +6,39 @@ class Attribute{
 	String name;
 	boolean isDiscrete;
 	public int split;
+	private int index;
+	private String[] values;
 
-	public Attribute(String n, String[] val){
+	public Attribute(String n, String[] val, int index){
 		name = n;
-		values = new ArrayList<Value>();
+		values = val;
+		this.index = index;
 		if(val.length == 0){ // continuous value
 			isDiscrete = false;
 		}else{ // discrete value
 			isDiscrete = true;
-			for(String s : val){
-				values.add(new DiscreteValue(s));
-			}
 		}
 	}
 	
-	public void addPositiveToValue(String value) {
-		if(isDiscrete){
-			DiscreteValue v = (DiscreteValue) values.get( values.indexOf(new DiscreteValue(value)) );
-			v.positives++;
-		}else{
-			values.add(new ContinuousValue(Double.parseDouble(value), true));
-		}
-	}
-	public void addNegativeToValue(String value) {
-		if(isDiscrete){
-			DiscreteValue v = (DiscreteValue) values.get( values.indexOf(new DiscreteValue(value)) );
-			v.negatives++;
-		}else{
-			values.add(new ContinuousValue(Double.parseDouble(value), false));
-		}
+	public String toString(List<Line> lines){
+		return name;//+values.toString();
 	}
 	
-	public String toString(){
-		return name+values.toString();
-	}
-	
-	private void calculateSplit(){
-		split = 0;
+	private void calculateSplit(List<Line> lines){
+		/*split = 0;
+		Line<>
 		for(Value v : values){
 			if(v instanceof ContinuousValue){
 				ContinuousValue cv = ((ContinuousValue) v);
 				split += cv.value;
 			}
 		}
-		split /= values.size();
+		split /= values.size();*/
 		
 	}
 
 	public void discretize() {
-		if(!isDiscrete){
+		/*if(!isDiscrete){
 			calculateSplit();
 			List<Value> continuous = (List<Value>) values.clone();
 			values.clear();
@@ -81,6 +65,22 @@ class Attribute{
 				}
 			}
 			
+		}*/
+	}
+
+	public int getIndex() {
+		return index;
+	}
+	
+	public String toString(){
+		return name;
+	}
+
+	public String[] getValues() {
+		if(isDiscrete){
+			return values;
+		}else{
+			return new String[]{"above", "below"};
 		}
 	}
 }
