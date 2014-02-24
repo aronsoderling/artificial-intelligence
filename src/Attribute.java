@@ -5,7 +5,7 @@ import java.util.List;
 class Attribute{
 	String name;
 	boolean isDiscrete;
-	public int split;
+	public double split;
 	private int index;
 	private String[] values;
 
@@ -23,50 +23,6 @@ class Attribute{
 	public String toString(List<Line> lines){
 		return name;//+values.toString();
 	}
-	
-	private void calculateSplit(List<Line> lines){
-		/*split = 0;
-		Line<>
-		for(Value v : values){
-			if(v instanceof ContinuousValue){
-				ContinuousValue cv = ((ContinuousValue) v);
-				split += cv.value;
-			}
-		}
-		split /= values.size();*/
-		
-	}
-
-	public void discretize() {
-		/*if(!isDiscrete){
-			calculateSplit();
-			List<Value> continuous = (List<Value>) values.clone();
-			values.clear();
-
-			DiscreteValue above = new DiscreteValue("above split");
-			DiscreteValue below = new DiscreteValue("below split");
-			values.add(above);
-			values.add(below);
-			
-			for(Value v : continuous){
-				ContinuousValue cv = (ContinuousValue)v;
-				if(cv.value > split){
-					if(cv.positive){
-						above.positives++;
-					}else{
-						above.negatives++;
-					}
-				}else{
-					if(cv.positive){
-						below.positives++;
-					}else{
-						below.negatives++;
-					}
-				}
-			}
-			
-		}*/
-	}
 
 	public int getIndex() {
 		return index;
@@ -80,7 +36,7 @@ class Attribute{
 		if(isDiscrete){
 			return values;
 		}else{
-			return new String[]{"above", "below"};
+			return new String[]{"above "+split, "below "+split};
 		}
 	}
 }

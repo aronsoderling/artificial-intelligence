@@ -11,6 +11,7 @@ import java.util.List;
 public class DecisionTree {
 	private ArrayList<Attribute> attributes = new ArrayList<Attribute>();
 	private ArrayList<Line> lines = new ArrayList<Line>();
+	private String[] classValues;
 
 	public DecisionTree(String filename){
 		ArrayList<String[]> temp = new ArrayList<String[]>();
@@ -71,26 +72,32 @@ public class DecisionTree {
 					split[i] += Double.parseDouble(s[i]);
 				}
 				split[i] /= temp.size();
+				a.split = split[i];
 				
 				for(String[] s : temp){
 					if(Double.parseDouble(s[i]) > split[i]){
-						s[i] = "above";
+						s[i] = "above "+split[i];
 					}else{
-						s[i] = "below";
+						s[i] = "below "+split[i];
 					}
 				}
 			}
 			i++;
 		}
 		
+		classValues = attributes.get(attributes.size()-1).getValues();
+		
 		for(String[] s : temp){
 			Line l = new Line(s);
 			lines.add(l);
 		}
 		
-		System.out.println(attributes);// + " ("+v+")");
+		//System.out.println(attributes);// + " ("+v+")");
 		
-		IntermediateNode root = (IntermediateNode)dtl(lines, attributes, lines);
+		ArrayList<Attribute> attrClone = (ArrayList<Attribute>)attributes.clone();
+		attrClone.remove(attrClone.size()-1);
+		
+		Node root = dtl(lines, attrClone, lines);
 		System.out.println(root);
 	}
 
@@ -104,6 +111,7 @@ public class DecisionTree {
 		String v = line.substring(start+1, line.length()-1);
 		String[] values = {};
 		if(line.charAt(start) == '{'){
+			v = v.trim();
 			values = v.split(", ");
 		}else if(line.substring(start, line.length()).equals("real")){
 			// real, do nothing
@@ -116,14 +124,14 @@ public class DecisionTree {
 		if(examples.isEmpty()){
 			return pluralityValue(parentExamples);
 		}else if(allPositive(examples)){
-			return new EndNode("Yes");
+			return new EndNode(classValues[0]);
 		}else if(allNegative(examples)){
-			return new EndNode("No");
+			return new EndNode(classValues[1]);
 		}else if(attributes.isEmpty()){
 			return pluralityValue(examples);
 		}else{
 			Attribute A = null;
-			double maxGain = Double.MIN_VALUE;
+			double maxGain = -1;
 			for(Attribute a: attributes){
 				double gain = informationGain(a, examples);
 				if(gain > maxGain){
@@ -151,10 +159,13 @@ public class DecisionTree {
 	private int[] countPosAndNeg(List<Line> examples) {
 		int[] posneg = new int[]{0, 0};
 		for (Line line : examples) {
-			if(line.getLastValue().equals("yes")){
+			String val = line.getLastValue();
+			if(line.getLastValue().equals(classValues[0])){
 				posneg[0]++;
-			}else{
+			}else if(line.getLastValue().equals(classValues[1])){
 				posneg[1]++;
+			}else{
+				System.out.println("OHH NOOO!");
 			}
 		}
 		return posneg;
@@ -203,16 +214,16 @@ public class DecisionTree {
 	private EndNode pluralityValue(List<Line> examples) {
 		int count = 0;
 		for (Line line : examples) {
-			if(line.getLastValue().equals("yes")){
+			if(line.getLastValue().equals(classValues[0])){
 				count++;
 			}else{
 				count--;
 			}
 		}
-		return new EndNode( (count>0) ? "yes" : "no");
+		return new EndNode( (count>0) ? classValues[0] : classValues[1]);
 	}
 	
 	public static void main(String[] args){
-		DecisionTree d = new DecisionTree("weather2.arff");
+		DecisionTree d = new DecisionTree(args[0]);
 	}
 }
