@@ -1,21 +1,20 @@
 package a4;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
 
-public class speechTagger {
+public class U {
 	
-	static final int WORD = 1;
-	static final int POS = 4;
-	static final int PPOS = 5;
+	public static final int WORD = 1;
+	public static final int LEMMA = 2;
+	public static final int POS = 4;
+	public static final int PPOS = 5;
 	
-	
-	public speechTagger(){
-		
-	}
-	public BufferedReader getReader(String file){
+
+	public static BufferedReader getReader(String file){
 		BufferedReader r = null;
 		FileInputStream fs;
 		try {
@@ -32,7 +31,20 @@ public class speechTagger {
 		return r;
 	}
 	
-	public TreeMap<String, Integer> count(String file, int position){
+	public static PrintWriter getWriter(String file){
+		PrintWriter writer = null;
+		try {
+		    writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(
+		          new FileOutputStream(file), "utf-8")));
+			/*writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(
+			          System.out, "utf-8")));*/
+		} catch (IOException ex) {
+		  ex.printStackTrace();
+		} 
+		return writer;
+	}
+	
+	public static TreeMap<String, Integer> count(String file, int position){
 		TreeMap<String, Integer> map = new TreeMap<String, Integer>();
 		
 			try{
@@ -60,7 +72,7 @@ public class speechTagger {
 		return map;
 	}
 	
-	public TreeMap<String, Double> evaluateTagger(String file){
+	public static TreeMap<String, Double> evaluateTagger(String file){
 		
 		TreeMap<String, Integer> correctPos = new TreeMap<String, Integer>();
 		TreeMap<String, Integer> pos = new TreeMap<String, Integer>();
@@ -116,7 +128,7 @@ public class speechTagger {
 		return eval;
 	}
 	
-	public TreeMap<String, TreeMap<String, Double>> getConfusionMatrix(String file){
+	public static TreeMap<String, TreeMap<String, Double>> getConfusionMatrix(String file){
 		TreeMap<String, TreeMap<String, Integer>> pos = new TreeMap<String, TreeMap<String, Integer>>();
 		
 		try {
@@ -170,21 +182,96 @@ public class speechTagger {
 		return eval;
 	}
 
+	public static TreeMap<String, TreeMap<String, Double>> generatePwt(String file) {
+		TreeMap<String, TreeMap<String, Double>> result = new TreeMap<String, TreeMap<String, Double>>();
+		TreeMap<String, TreeMap<String, Integer>> map = new TreeMap<String, TreeMap<String, Integer>>();
+		
+		try{
+			BufferedReader r = U.getReader(file);
+			String line = null;
+			String[] splitLine = null;
+			String currentPos = null;
+			String currentWord = null;
+			
+			while ((line = r.readLine()) != null){
+				splitLine = line.split("\t");
+				if(splitLine.length > U.POS){
+					currentPos = splitLine[U.POS];
+					currentWord = splitLine[U.LEMMA];
+
+					if(map.containsKey(currentPos)){
+						TreeMap<String, Integer> k = map.get(currentPos);
+						if(k.containsKey(currentWord)){
+							k.put(currentWord, k.get(currentWord)+1);
+						}else{
+							k.put(currentWord, 1);
+						}
+					}else{
+						TreeMap<String, Integer> k = new TreeMap<String, Integer>();
+						k.put(currentWord, 1);
+						map.put(currentPos, k);
+					}
+				}
+			}
+			r.close();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		
+		
+		for (Map.Entry<String, TreeMap<String, Integer>> e : map.entrySet()) {
+			int total = 0;
+			for (Map.Entry<String, Integer> e2 : e.getValue().entrySet()) {
+				total += e2.getValue();
+			}
+			
+			TreeMap<String, Double> kuulT = new TreeMap<String, Double>();
+			for (Map.Entry<String, Integer> e2 : e.getValue().entrySet()) {
+				kuulT.put(e2.getKey(), e2.getValue() / (double) total);
+			}
+			result.put(e.getKey(), kuulT);
+		}
+		
+		return result;
+	}
+	
 	public static void main(String[] args) {
-		speechTagger st = new speechTagger();	
-		/*TreeMap<String, Integer> words = st.count("corpus-train-pos.txt", POS);
+		TreeMap<String, Integer> words = count("corpus-development-pos.txt", POS);
 		for(Map.Entry<String, Integer> e : words.entrySet()){
 			System.out.println(e.getKey() + " : " + e.getValue());	
-		}*/
+		}
 		
-		TreeMap<String, Double> eval = st.evaluateTagger("huhu.txt");
+		TreeMap<String, Double> eval = evaluateTagger("huhu.txt");
 		for(Map.Entry<String, Double> e : eval.entrySet()){
 			System.out.println(e.getKey() + " : " + e.getValue());	
 		}
 		
-		TreeMap<String, TreeMap<String, Double>> confusion = st.getConfusionMatrix("corpus-development-pos.txt");
+		TreeMap<String, TreeMap<String, Double>> confusion = getConfusionMatrix("corpus-development-pos.txt");
 		System.out.println(confusion);
 		
+	}
+
+	public static ArrayList<String> readSentence(BufferedReader r, int maxWords) {
+		String line = null;
+		ArrayList<String> result = new ArrayList<String>();
+		boolean more = true;
+		try {
+			while (more && (line = r.readLine()) != null){
+				String[] splitLine = line.split("\t");
+				if(splitLine.length > WORD){
+					result.add( line );
+				}else{
+					if(result.size() > maxWords){
+						result.clear();
+					}else{
+						more = false;
+					}
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 }

@@ -10,6 +10,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
+import java.util.Map;
 import java.util.TreeMap;
 import java.util.Map.Entry;
 
@@ -28,7 +29,7 @@ public class BaselineTagger {
 		TreeMap<String, TreeMap<String, Integer>> map = new TreeMap<String, TreeMap<String, Integer>>();
 		
 		try{
-			BufferedReader r = getReader(file);
+			BufferedReader r = U.getReader(file);
 			String line = null;
 			String[] splitLine = null;
 			String word = null;
@@ -82,8 +83,8 @@ public class BaselineTagger {
 	}
 	
 	public void tag(String inputFile, String outputFile, TreeMap<String, String> berit){
-		PrintWriter w = getWriter(outputFile);
-		BufferedReader r = getReader(inputFile);
+		PrintWriter w = U.getWriter(outputFile);
+		BufferedReader r = U.getReader(inputFile);
 		String line = null;
 		String[] s = null;
 		String word = null;
@@ -106,41 +107,17 @@ public class BaselineTagger {
 		}
 	}
 	
-	public PrintWriter getWriter(String file){
-		PrintWriter writer = null;
-		try {
-		    writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(
-		          new FileOutputStream(file), "utf-8")));
-			/*writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(
-			          System.out, "utf-8")));*/
-		} catch (IOException ex) {
-		  ex.printStackTrace();
-		} 
-		return writer;
-	}
-	
-	public BufferedReader getReader(String file){
-		BufferedReader r = null;
-		FileInputStream fs;
-		try {
-			fs = new FileInputStream(file);
-			InputStreamReader is = new InputStreamReader(fs, "UTF-8");
-			r = new BufferedReader(is);
-		
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found");
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-		return r;
-	}
-	
 	public static void main(String[] args) {
 		BaselineTagger b = new BaselineTagger();
 		TreeMap<String, String> berit = b.init("corpus-train-pos.txt");
-		System.out.println(berit);
+		//System.out.println(berit);
 		
 		b.tag("corpus-development-pos.txt", "huhu.txt", berit);
+		
+		U s = new U();
+		TreeMap<String, Double> eval = s.evaluateTagger("huhu.txt");
+		for(Map.Entry<String, Double> e : eval.entrySet()){
+			System.out.println(e.getKey() + " : " + e.getValue());	
+		}
 	}
 }
