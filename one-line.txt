@@ -1,0 +1,6 @@
+1	That	that	that	DT	DT
+2	round	round	round	NN	NN
+3	table	table	table	POS	POS
+4	might	might	might	NN	NN
+5	collapse	collapse	collapse	MD	MD
+6	.	.	.	.	.

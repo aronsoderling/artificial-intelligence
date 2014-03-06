@@ -77,16 +77,11 @@ public class Bigram {
 	}
 
 	public static void main(String[] args) {
-		Bigram st = new Bigram();
-
 		TreeMap<String, TreeMap<String, Integer>> bigrams = generateBigrams("corpus-development-pos.txt");
 		TreeMap<String, TreeMap<String, Double>> ptt = generatePtt(bigrams);
 		
-		//System.out.println(pwt);
-		/*TreeMap<String, Integer> words = st.count("corpus-train-pos.txt", POS);
-		for(Map.Entry<String, Integer> e : words.entrySet()){
-			System.out.println(e.getKey() + " : " + e.getValue());	
-		}*/
+		System.out.println(ptt);
+		
 		
 	}
 }

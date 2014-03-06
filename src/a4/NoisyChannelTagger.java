@@ -21,7 +21,8 @@ public class NoisyChannelTagger {
 		return result;
 	}
 	
-	private static LinkedHashMap<String, String> exhaustiveSearch(LinkedHashMap<String, TreeMap<String, Double>> table) {
+	
+	static LinkedHashMap<String, String> exhaustiveSearch(LinkedHashMap<String, TreeMap<String, Double>> table) {
 		LinkedHashMap<String, String> result = new LinkedHashMap<String, String>();
 		for (Map.Entry<String, TreeMap<String, Double>> e : table.entrySet()) {
 			double max = -1;

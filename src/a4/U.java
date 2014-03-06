@@ -251,7 +251,7 @@ public class U {
 		
 	}
 
-	public static ArrayList<String> readSentence(BufferedReader r, int maxWords) {
+	public static ArrayList<String> readSentenceLine(BufferedReader r, int maxWords) {
 		String line = null;
 		ArrayList<String> result = new ArrayList<String>();
 		boolean more = true;
@@ -260,6 +260,29 @@ public class U {
 				String[] splitLine = line.split("\t");
 				if(splitLine.length > WORD){
 					result.add( line );
+				}else{
+					if(result.size() > maxWords){
+						result.clear();
+					}else{
+						more = false;
+					}
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	public static ArrayList<String> readSentence(BufferedReader reader, int maxWords) {
+		String line = null;
+		ArrayList<String> result = new ArrayList<String>();
+		boolean more = true;
+		try {
+			while (more && (line = reader.readLine()) != null){
+				String[] splitLine = line.split("\t");
+				if(splitLine.length > LEMMA){
+					result.add( splitLine[LEMMA] );
 				}else{
 					if(result.size() > maxWords){
 						result.clear();

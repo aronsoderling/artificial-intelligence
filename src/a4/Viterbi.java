@@ -167,7 +167,7 @@ public class Viterbi {
 		BufferedReader reader = U.getReader("corpus-test-words.txt");
 		PrintWriter writer = U.getWriter("huhu.flexa");
 		while(true){
-			ArrayList<String> sentence = U.readSentence(reader, 100); //"that round table might collapse";
+			ArrayList<String> sentence = U.readSentenceLine(reader, 100); //"that round table might collapse";
 			if(sentence.size() == 0){
 				break;
 			}
