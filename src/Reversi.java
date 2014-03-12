@@ -232,10 +232,9 @@ public class Reversi {
 				++length;
 			}
 		}
+		
 		int[] validMoves2 = new int[length];
-		for(int i=0; i<length; i++){
-			validMoves2[i] = validMoves1[i];
-		}
+		System.arraycopy(validMoves1, 0, validMoves2, 0, length);
 		return validMoves2;
 	}
 	

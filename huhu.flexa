@@ -1,374 +1,610 @@
-1	The	the	the	DT
-2	market	market	market	VBZ
-3	crumbled	crumble	crumble	VBG
-4	.	.	.	NNP
-
-1	These	these	these	DT
-2	stocks	stocks	stocks	NNS
-3	eventually	eventually	eventually	RB
-4	reopened	reopen	reopen	VB
-5	.	.	.	NNP
-
-1	But	but	but	CC
-2	stocks	stocks	stocks	NNS
-3	kept	keep	keep	VBP
-4	falling	fall	fall	VBN
-5	.	.	.	NNP
-
-1	George	george	george	NNP
-2	Morton	morton	morton	NNP
-
-1	The	the	the	DT
-2	accord	accord	accord	NN
-3	expired	expire	expire	VBN
-4	yesterday	yesterday	yesterday	NNP
-5	.	.	.	NNP
-
-1	Some	some	some	DT
-2	say	say	say	VBN
-3	November	november	november	NNP
-4	.	.	.	NNP
-
-1	I	i	i	PRP
-2	say	say	say	VBD
-3	1992	1992	1992	CD
-4	.	.	.	.
-5	''	''	''	NNP
-
-1	Terms	terms	terms	NNS
-2	were	be	be	VBP
-3	n't	not	not	RB
-4	disclosed	disclose	disclose	VB
-5	.	.	.	NNP
-
-1	Companies	company	company	NNS
-2	added	add	add	JJ
-3	capacity	capacity	capacity	NN
-4	furiously	furiously	furiously	RB
-5	.	.	.	NNP
-
-1	Energy	energy	energy	NNS
-
-1	Ad	ad	ad	NNS
-2	Notes	note	note	VBP
-3	...	...	...	:
-4	.	.	.	NNP
-
-1	NEW	new	new	NNP
-2	ACCOUNT	account	account	NNP
-3	:	:	:	:
-
-1	ACCOUNT	account	account	NNS
-2	REVIEW	review	review	VBN
-3	:	:	:	:
-
-1	NOT	not	not	RB
-2	-	-	-	JJ
-3	GUILTY	guilty	guilty	JJ
-4	PLEA	plea	plea	NN
-5	:	:	:	:
-
-1	KOREAN	korean	korean	JJ
-2	AGENCY	agency	agency	NN
-3	:	:	:	:
-
-1	Bristol-Myers	bristol-myers	bristol-myers	NNP
-2	declined	decline	decline	VBD
-3	to	to	to	TO
-4	comment	comment	comment	VB
-5	.	.	.	NNP
-
-1	He	he	he	PRP
-2	's	be	be	VBZ
-3	a	a	a	RB
-4	bore	bore	bore	VBD
-5	.	.	.	NNP
-
-1	The	the	the	DT
-2	device	device	device	NN
-3	was	be	be	VBZ
-4	replaced	replace	replace	VBN
-5	.	.	.	NNP
-
-1	More	more	more	RBR
-2	Elderly	elderly	elderly	JJ
-3	Maintain	maintain	maintain	VBZ
-4	Their	their	their	NNP
-5	Independence	independence	independence	NNP
-
-1	Odds	odds	odds	NNS
-2	and	and	and	CC
-3	Ends	end	end	VBZ
-
-1	Anita	anita	anita	NNP
-2	Davis	davis	davis	NNP
-
-1	Why	why	why	WRB
-2	constructive	constructive	constructive	JJ
-3	?	?	?	.
-
-1	Sound	sound	sound	JJ
-2	familiar	familiar	familiar	JJ
-3	?	?	?	.
-
-1	Heard	hear	hear	VBG
-2	that	that	that	DT
-3	before	before	before	RB
-4	?	?	?	.
-
-1	Among	among	among	IN
-2	its	its	its	CD
-3	provisions	provisions	provisions	NNS
-4	:	:	:	:
-
-1	Are	be	be	VBG
-2	you	you	you	NN
-3	kidding	kid	kid	NN
-4	?	?	?	.
-
-1	Cambridge	cambridge	cambridge	NNP
-2	,	,	,	NNP
-3	Mass	mass	mass	NNP
-4	.	.	.	NNP
-
-1	Joseph	joseph	joseph	NNP
-2	Granville	granville	granville	NNP
-3	.	.	.	NNP
-
-1	Ned	ned	ned	NNP
-2	Davis	davis	davis	NNP
-3	.	.	.	NNP
-
-1	Mario	mario	mario	NNP
-2	Gabelli	gabelli	gabelli	NNP
-3	.	.	.	NNP
-
-1	Jim	jim	jim	NNP
-2	Rogers	rogers	rogers	NNP
-3	.	.	.	NNP
-
-1	Frank	frank	frank	NNP
-2	W.	w.	w.	NNP
-3	Terrizzi	terrizzi	terrizzi	NNP
-4	.	.	.	NNP
-
-1	Yes	yes	yes	UH
-2	,	,	,	,
-3	he	he	he	PRP
-4	did	do	do	JJ
-5	.	.	.	NNP
-
-1	Absolute	absolute	absolute	JJ
-2	rubbish	rubbish	rubbish	NN
-3	.	.	.	NNP
-
-1	Just	just	just	RB
-2	a	a	a	DT
-3	coincidence	coincidence	coincidence	NN
-4	?	?	?	.
-
-1	But	but	but	CC
-2	they	they	they	PRP
-3	are	be	be	VBZ
-4	worried	worried	worry	JJ
-5	.	.	.	NNP
-
-1	But	but	but	CC
-2	they	they	they	PRP
-3	fell	fell	fell	VBP
-4	sharply	sharply	sharply	RB
-5	.	.	.	NNP
-
-1	PRIME	prime	prime	JJ
-2	RATE	rate	rate	NN
-3	:	:	:	:
-
-1	10	10	10	CD
-2	1\/2	1\/2	1\/2	CD
-3	%	%	%	NN
-4	.	.	.	NNP
-
-1	FEDERAL	federal	federal	NNP
-2	FUNDS	funds	funds	NNP
-3	:	:	:	:
-
-1	DISCOUNT	discount	discount	NN
-2	RATE	rate	rate	VBN
-3	:	:	:	:
-
-1	7	7	7	CD
-2	%	%	%	NN
-3	.	.	.	NNP
-
-1	CALL	call	call	VBN
-2	MONEY	money	money	NN
-3	:	:	:	:
-
-1	COMMERCIAL	commercial	commercial	JJ
-2	PAPER	paper	paper	NN
-3	:	:	:	:
-
-1	CERTIFICATES	certificate	certificate	NNS
-2	OF	of	of	IN
-3	DEPOSIT	deposit	deposit	NNS
-4	:	:	:	:
-
-1	BANKERS	banker	banker	NN
-2	ACCEPTANCES	acceptance	acceptance	NNS
-3	:	:	:	:
-
-1	LONDON	london	london	NNP
-2	LATE	late	late	NNP
-3	EURODOLLARS	eurodollar	eurodollar	NN
-4	:	:	:	:
-
-1	FOREIGN	foreign	foreign	JJ
-2	PRIME	prime	prime	NN
-3	RATES	rates	rates	NNS
-4	:	:	:	:
-
-1	TREASURY	treasury	treasury	NNP
-2	BILLS	bill	bill	VBP
-3	:	:	:	:
-
-1	8.33	8.33	8.33	CD
-2	%	%	%	NN
-3	.	.	.	NNP
-
-1	Consider	consider	consider	VBG
-2	this	this	this	RB
-3	:	:	:	:
-
-1	Baldwin	baldwin	baldwin	NNP
-2	Technology	technology	technology	NNP
-3	Co.	co.	co.	NNP
-4	--	--	--	:
-
-1	Blockbuster	blockbuster	blockbuster	NNP
-2	Entertainment	entertainment	entertainment	NNP
-3	Corp.	corp.	corp.	NNP
-4	--	--	--	:
-
-1	Chase	chase	chase	NNP
-2	Manhattan	manhattan	manhattan	NNP
-3	Corp.	corp.	corp.	NNP
-4	--	--	--	:
-
-1	Comcast	comcast	comcast	NNP
-2	Corp.	corp.	corp.	NNP
-3	--	--	--	:
-
-1	CSS	cs	cs	NNP
-2	Industries	industry	industry	NNP
-3	--	--	--	:
-
-1	Eastern	eastern	eastern	NNP
-2	Utilities	utility	utility	NNS
-3	Associates	associate	associate	VBP
-4	--	--	--	:
-
-1	Employee	employee	employee	NNS
-2	Benefit	benefit	benefit	VBD
-3	Plans	plan	plan	NNP
-4	Inc.	inc.	inc.	NNP
-5	--	--	--	:
-
-1	Exabyte	exabyte	exabyte	NNP
-2	Corp.	corp.	corp.	NNP
-3	--	--	--	:
-
-1	Knowledgeware	knowledgeware	knowledgeware	NNP
-2	Inc.	inc.	inc.	NNP
-3	--	--	--	:
-
-1	Oregon	oregon	oregon	NNP
-2	--	--	--	:
-
-1	Washington	washington	washington	NNP
-2	,	,	,	NNP
-3	D.C.	d.c.	d.c.	NNP
-4	--	--	--	:
-
-1	Virginia	virginia	virginia	NNP
-2	Public	public	public	NNP
-3	School	school	school	NNP
-4	Authority	authority	authority	NN
-5	--	--	--	:
-
-1	Austin	austin	austin	NNP
-2	,	,	,	NNP
-3	Texas	texas	texas	NNP
-4	--	--	--	:
-
-1	Connecticut	connecticut	connecticut	NNP
-2	--	--	--	:
-
-1	Tennessee	tennessee	tennessee	NNP
-2	Valley	valley	valley	NNP
-3	Authority	authority	authority	NNP
-4	--	--	--	:
-
-1	San	san	san	NNP
-2	Antonio	antonio	antonio	NNP
-3	,	,	,	NNP
-4	Texas	texas	texas	NNP
-5	--	--	--	:
-
-1	``	``	``	``
-2	Are	be	be	VB
-3	you	you	you	PRP
-4	kidding	kid	kid	NN
-5	!	!	!	.
-
-1	It	it	it	PRP
-2	's	be	be	VBZ
-3	huge	huge	huge	JJ
-4	.	.	.	NNP
-5	''	''	''	NNP
-
-1	What	what	what	WP
-2	about	about	about	RB
-3	Big	big	big	JJ
-4	Blue	blue	blue	JJ
-5	?	?	?	.
-
-1	Plunge	plunge	plunge	NN
-2	?	?	?	.
-
-1	What	what	what	WP
-2	plunge	plunge	plunge	VBD
-3	?	?	?	.
-
-1	Do	do	do	VBZ
-2	n't	not	not	RB
-3	jump	jump	jump	VB
-4	yet	yet	yet	RP
-5	.	.	.	NNP
-
-1	Growth	growth	growth	NN
-2	is	be	be	VBD
-3	slower	slow	slow	VBN
-4	.	.	.	NNP
-
-1	Profits	profits	profits	NNS
-2	are	be	be	VBP
-3	softer	soft	soft	JJ
-4	.	.	.	NNP
-
-1	Debt	debt	debt	NN
-2	burdens	burden	burden	VBD
-3	are	be	be	VBN
-4	heavier	heavy	heavy	NNP
-5	.	.	.	NNP
-
-1	Monsanto	monsanto	monsanto	NNP
-2	declined	decline	decline	VBD
-3	to	to	to	TO
-4	comment	comment	comment	VB
-5	.	.	.	NNP
-
-1	Dow	dow	dow	NNP
-2	Chemical	chemical	chemical	NNP
-3	Co.	co.	co.	NNP
-4	--	--	--	:
+1	Two	two	two	CD	CD
+2	-	-	-	HYPH	HYPH
+3	Way	way	way	NNP	NN
+4	Street	street	street	NNP	NNP
+
+1	--	--	--	:	:
+2	Rollin	rollin	rollin	NNP	null
+3	S.	s.	s.	NNP	NNP
+4	Trexler	trexler	trexler	NNP	null
+5	.	.	.	.	.
+
+1	Candid	candid	candid	NNP	JJ
+2	Comment	comment	comment	NNP	VB
+
+1	--	--	--	:	:
+2	C.E.	c.e.	c.e.	NNP	null
+3	Friedman	friedman	friedman	NNP	NNP
+4	.	.	.	.	.
+
+1	Ah	ah	ah	UH	UH
+2	,	,	,	,	,
+3	perfidious	perfidious	perfidious	JJ	null
+4	Columbia	columbia	columbia	NNP	NNP
+5	!	!	!	.	.
+
+1	But	but	but	CC	CC
+2	the	the	the	DT	DT
+3	investigation	investigation	investigation	NN	NN
+4	continues	continue	continue	VBZ	VB
+5	.	.	.	.	.
+
+1	The	the	the	DT	DT
+2	seeds	seed	seed	NNS	NNS
+3	already	already	already	RB	RB
+4	are	be	be	VBP	VBZ
+5	in	in	in	IN	IN
+6	the	the	the	DT	NNS
+7	script	script	script	NN	.
+
+1	It	it	it	PRP	PRP
+2	should	should	should	MD	MD
+3	run	run	run	VB	VBG
+4	forever	forever	forever	RB	RB
+5	.	.	.	.	.
+
+1	c	c	c	SYM	SYM
+2	-	-	-	:	HYPH
+3	Domestic	domestic	domestic	JJ	JJ
+4	car	car	car	NN	NNS
+
+1	Sequa	sequa	sequa	NNP	NNP
+2	makes	make	make	VBZ	VB
+3	and	and	and	CC	CC
+4	repairs	repair	repair	VBZ	VB
+5	jet	jet	jet	NN	NN
+6	engines	engine	engine	NNS	NNS
+7	.	.	.	.	.
+
+1	``	``	``	``	``
+2	That	that	that	DT	WDT
+3	is	be	be	VBZ	VBZ
+4	a	a	a	DT	DT
+5	miracle	miracle	miracle	NN	NN
+6	.	.	.	.	.
+7	''	''	''	''	''
+
+1	Not	not	not	RB	RB
+2	necessarily	necessarily	necessarily	RB	RB
+3	.	.	.	.	.
+
+1	There	there	there	EX	EX
+2	's	be	be	VBZ	VBZ
+3	no	no	no	DT	UH
+4	need	need	need	NN	VBP
+5	for	for	for	IN	IN
+6	such	such	such	DT	PDT
+7	concessions	concession	concession	NNS	NNS
+8	.	.	.	.	.
+
+1	The	the	the	DT	DT
+2	bonds	bond	bond	NNS	NNS
+3	go	go	go	VBP	VBG
+4	on	on	on	IN	IN
+5	sale	sale	sale	NN	NN
+6	Oct.	oct.	oct.	NNP	NNP
+7	19	19	19	CD	CD
+8	.	.	.	.	.
+
+1	It	it	it	PRP	PRP
+2	might	might	might	MD	MD
+3	well	well	well	RB	UH
+4	win	win	win	VB	VB
+5	Senate	senate	senate	NNP	NNP
+6	passage	passage	passage	NN	NN
+7	.	.	.	.	.
+
+1	Doctrine	doctrine	doctrine	NN	NN
+2	and	and	and	CC	CC
+3	special	special	special	JJ	JJ
+4	interests	interest	interest	NNS	NN
+5	govern	govern	govern	VBP	VBG
+6	some	some	some	DT	DT
+7	responses	response	response	NNS	NN
+8	.	.	.	.	.
+
+1	Then	then	then	RB	RB
+2	there	there	there	EX	EX
+3	are	be	be	VBP	VBZ
+4	instinctive	instinctive	instinctive	JJ	JJ
+5	opponents	opponent	opponent	NNS	NNS
+6	.	.	.	.	.
+
+1	How	how	how	WRB	WRB
+2	should	should	should	MD	MD
+3	we	we	we	PRP	PRP
+4	think	think	think	VB	VBP
+5	about	about	about	IN	IN
+6	national	national	national	JJ	JJ
+7	service	service	service	NN	NN
+8	?	?	?	.	.
+
+1	Would	would	would	MD	MD
+2	service	service	service	NN	NN
+3	be	be	be	VB	VBZ
+4	voluntary	voluntary	voluntary	JJ	JJ
+5	or	or	or	CC	CC
+6	compulsory	compulsory	compulsory	JJ	null
+7	?	?	?	.	.
+
+1	Short	short	short	JJ	JJ
+2	or	or	or	CC	CC
+3	long	long	long	JJ	JJR
+4	?	?	?	.	.
+
+1	Part	part	part	RB	NN
+2	-	-	-	HYPH	HYPH
+3	time	time	time	NN	NN
+4	or	or	or	CC	CC
+5	full	full	full	JJ	JJ
+6	-	-	-	HYPH	.
+
+1	Paid	pay	pay	VBN	VB
+2	or	or	or	CC	CC
+3	unpaid	unpaid	unpaid	JJ	JJ
+4	?	?	?	.	.
+
+1	What	what	what	WDT	WP
+2	kinds	kind	kind	NNS	JJR
+3	of	of	of	IN	IN
+4	work	work	work	NN	VBG
+5	would	would	would	MD	MD
+6	they	they	they	PRP	PRP
+7	do	do	do	VB	VBP
+8	?	?	?	.	.
+
+1	What	what	what	WP	WP
+2	does	do	do	VBZ	VBP
+3	``	``	``	``	``
+4	national	national	national	JJ	JJ
+5	''	''	''	''	''
+6	mean	mean	mean	VB	VBZ
+7	?	?	?	.	.
+
+1	And	and	and	CC	CC
+2	who	who	who	WP	WP
+3	would	would	would	MD	MD
+4	serve	serve	serve	VB	VB
+5	?	?	?	.	.
+
+1	Youth	youth	youth	NN	NN
+2	only	only	only	RB	RB
+3	or	or	or	CC	CC
+4	all	all	all	DT	PDT
+5	ages	age	age	NNS	NN
+6	?	?	?	.	.
+
+1	Many	many	many	DT	DT
+2	or	or	or	CC	CC
+3	few	few	few	DT	DT
+4	?	?	?	.	.
+
+1	They	they	they	PRP	PRP
+2	will	will	will	MD	MD
+3	differ	differ	differ	VB	VBG
+4	in	in	in	IN	IN
+5	crucial	crucial	crucial	JJ	JJ
+6	ways	ways	ways	NNS	NNPS
+7	.	.	.	.	.
+
+1	As	as	as	IN	IN
+2	commonly	commonly	commonly	RB	RB
+3	understood	understand	understand	VBN	VB
+4	,	,	,	,	,
+5	service	service	service	NN	NN
+6	implies	imply	imply	VBZ	VBZ
+7	sacrifice	sacrifice	sacrifice	NN	VBG
+8	.	.	.	.	.
+
+1	Why	why	why	WRB	WRB
+2	call	call	call	VB	VBN
+3	that	that	that	DT	WDT
+4	service	service	service	NN	NN
+5	?	?	?	.	.
+
+1	Compelled	compel	compel	VBN	VBG
+2	service	service	service	NN	NN
+3	is	be	be	VBZ	VBZ
+4	unconstitutional	unconstitutional	unconstitutional	JJ	JJ
+5	.	.	.	.	.
+
+1	It	it	it	PRP	PRP
+2	is	be	be	VBZ	VBZ
+3	also	also	also	RB	RB
+4	unwise	unwise	unwise	JJ	JJ
+5	and	and	and	CC	CC
+6	unenforceable	unenforceable	unenforceable	JJ	null
+7	.	.	.	.	.
+
+1	4	4	4	LS	LS
+2	.	.	.	.	.
+3	Good	good	good	JJ	JJ
+4	programs	program	program	NNS	NN
+5	are	be	be	VBP	VBZ
+6	not	not	not	RB	RB
+7	cheap	cheap	cheap	JJ	JJR
+
+1	They	they	they	PRP	PRP
+2	involve	involve	involve	VBP	VBN
+3	stipends	stipend	stipend	NNS	null
+4	to	to	to	TO	TO
+5	participants	participant	participant	NNS	NNS
+6	.	.	.	.	.
+
+1	Are	be	be	VBP	VBZ
+2	they	they	they	PRP	PRP
+3	worth	worth	worth	JJ	JJ
+4	that	that	that	DT	WDT
+5	?	?	?	.	.
+
+1	But	but	but	CC	CC
+2	the	the	the	DT	DT
+3	calculations	calculation	calculation	NNS	NNS
+4	are	be	be	VBP	VBZ
+5	challengeable	challengeable	challengeable	JJ	null
+6	.	.	.	.	.
+
+1	Are	be	be	VBP	VBZ
+2	such	such	such	DT	PDT
+3	expenditures	expenditure	expenditure	NNS	NNS
+4	worthwhile	worthwhile	worthwhile	JJ	JJ
+5	,	,	,	,	,
+6	then	then	then	RB	RB
+7	?	?	?	.	.
+
+1	Yes	yes	yes	UH	UH
+2	,	,	,	,	,
+3	if	if	if	IN	IN
+4	targeted	target	target	VBN	VBG
+5	.	.	.	.	.
+
+1	Underclass	underclass	underclass	NN	NN
+2	youth	youth	youth	NN	NN
+3	do	do	do	VBP	VBP
+4	n't	not	not	RB	RB
+5	have	have	have	VB	VBP
+6	those	those	those	DT	DT
+7	opportunities	opportunity	opportunity	NNS	NNS
+8	.	.	.	.	.
+
+1	They	they	they	PRP	PRP
+2	are	be	be	VBP	VBZ
+3	unlikely	unlikely	unlikely	JJ	JJ
+4	to	to	to	TO	TO
+5	be	be	be	VB	VBN
+6	employed	employ	employ	VBN	.
+
+1	That	that	that	DT	WDT
+2	is	be	be	VBZ	VBZ
+3	a	a	a	DT	DT
+4	service	service	service	NN	NN
+5	to	to	to	TO	TO
+6	the	the	the	DT	DT
+7	nation	nation	nation	NN	NNPS
+8	.	.	.	.	.
+
+1	(	-lrb-	-lrb-	(	(
+2	Lexington	lexington	lexington	NNP	NNP
+3	Books	book	book	NNPS	NNS
+4	,	,	,	,	,
+5	1986	1986	1986	CD	CD
+6	)	-rrb-	-rrb-	)	)
+7	.	.	.	.	.
+
+1	I	i	i	PRP	PRP
+2	think	think	think	VBP	VBP
+3	that	that	that	DT	WDT
+4	's	be	be	VBZ	VBZ
+5	less	less	less	RBR	RBR
+6	likely	likely	likely	JJ	JJ
+7	.	.	.	.	.
+8	''	''	''	''	''
+
+1	b	b	b	SYM	SYM
+2	-	-	-	:	HYPH
+3	As	as	as	IN	IN
+4	of	of	of	IN	IN
+5	Thursday	thursday	thursday	NNP	NNP
+6	's	's	's	POS	POS
+7	close	close	close	NN	VBD
+8	.	.	.	.	.
+
+1	e	e	e	SYM	LS
+2	-	-	-	:	HYPH
+3	In	in	in	IN	IN
+4	Canadian	canadian	canadian	JJ	JJ
+5	dollars	dollar	dollar	NNS	NNS
+6	.	.	.	.	.
+
+1	f	f	f	SYM	SYM
+2	-	-	-	:	HYPH
+3	As	as	as	IN	IN
+4	of	of	of	IN	IN
+5	Wednesday	wednesday	wednesday	NNP	NNP
+6	's	's	's	POS	POS
+7	close	close	close	NN	VBD
+8	.	.	.	.	.
+
+1	g	g	g	SYM	NNP
+2	-	-	-	:	HYPH
+3	10.06.89	10.06.89	10.06.89	CD	null
+4	NAV:	nav:	nav:	NN	null
+5	22.15	22.15	22.15	CD	null
+6	.	.	.	.	.
+
+1	z	z	z	SYM	SYM
+2	-	-	-	:	HYPH
+3	Not	not	not	RB	RB
+4	available	available	available	JJ	JJ
+5	.	.	.	.	.
+
+1	Put	put	put	VB	VB
+2	down	down	down	IN	RP
+3	that	that	that	DT	WDT
+4	phone	phone	phone	NN	NN
+5	.	.	.	.	.
+
+1	``	``	``	``	``
+2	We	we	we	PRP	PRP
+3	understand	understand	understand	VBP	VB
+4	panics	panic	panic	NNS	VB
+5	and	and	and	CC	CC
+6	euphoria	euphoria	euphoria	NN	NN
+7	.	.	.	.	.
+
+1	Other	other	other	JJ	JJ
+2	investment	investment	investment	NN	NN
+3	pros	pro	pro	NNS	PRF
+4	are	be	be	VBP	VBZ
+5	more	more	more	RBR	RBR
+6	pessimistic	pessimistic	pessimistic	JJ	JJ
+7	.	.	.	.	.
+
+1	``	``	``	``	``
+2	It	it	it	PRP	PRP
+3	's	be	be	VBZ	VBZ
+4	totally	totally	totally	RB	RB
+5	different	different	different	JJ	JJ
+6	.	.	.	.	.
+7	''	''	''	''	''
+
+1	``	``	``	``	``
+2	There	there	there	EX	EX
+3	was	be	be	VBD	VBZ
+4	no	no	no	DT	UH
+5	panic	panic	panic	NN	VB
+6	.	.	.	.	.
+
+1	S&P	s&p	s&p	NNP	NNP
+2	and	and	and	CC	CC
+3	MMI	mmi	mmi	NNP	NNP
+4	contracts	contract	contract	NNS	NNS
+5	also	also	also	RB	RB
+6	halt	halt	halt	VBP	VBN
+7	.	.	.	.	.
+
+1	--	--	--	:	:
+2	Establish	establish	establish	VB	VBN
+3	an	an	an	DT	DT
+4	overarching	overarch	overarch	VBG	VBG
+5	regulator	regulator	regulator	NN	NNS
+6	for	for	for	IN	IN
+7	financial	financial	financial	JJ	JJ
+8	markets	market	market	NNS	NN
+
+1	--	--	--	:	:
+2	Unify	unify	unify	VB	VBN
+3	trade	trade	trade	NN	VBG
+4	-	-	-	HYPH	HYPH
+5	clearing	clear	clearing	VBG	JJ
+6	systems	system	system	NNS	NNPS
+
+1	SEC	sec	sec	NNP	NNP
+2	proposals	proposal	proposal	NNS	NN
+3	(	-lrb-	-lrb-	(	(
+4	May	may	may	NNP	MD
+5	1988	1988	1988	CD	CD
+6	)	-rrb-	-rrb-	)	)
+7	:	:	:	:	:
+
+1	(	-lrb-	-lrb-	(	(
+2	Opposed	oppose	oppose	VBN	VBN
+3	by	by	by	IN	IN
+4	new	new	new	JJ	JJ
+5	SEC	sec	sec	NNP	NNP
+6	chairman	chairman	chairman	NN	NN
+7	)	-rrb-	-rrb-	)	)
+
+1	Congressional	congressional	congressional	JJ	JJ
+2	proposal	proposal	proposal	NN	NN
+3	:	:	:	:	:
+
+1	(	-lrb-	-lrb-	(	(
+2	Sony	sony	sony	NNP	NNP
+3	itself	itself	itself	PRP	PRP
+4	declines	decline	decline	VBZ	VBD
+5	to	to	to	TO	TO
+6	comment	comment	comment	VB	VB
+7	.	.	.	.	.
+8	)	-rrb-	-rrb-	)	)
+
+1	It	it	it	PRP	PRP
+2	's	be	be	VBZ	VBZ
+3	also	also	also	RB	RB
+4	costly	costly	costly	JJ	JJ
+5	.	.	.	.	.
+
+1	Both	both	both	DT	DT
+2	companies	company	company	NNS	NN
+3	rejected	reject	reject	VBD	VBN
+4	the	the	the	DT	DT
+5	offers	offer	offer	NNS	VBN
+6	.	.	.	.	.
+
+1	The	the	the	DT	DT
+2	previous	previous	previous	JJ	JJ
+3	agreement	agreement	agreement	NN	NN
+4	expired	expire	expire	VBD	VBZ
+5	Thursday	thursday	thursday	NNP	NNP
+6	.	.	.	.	.
+
+1	Goldman	goldman	goldman	NNP	NNP
+2	officials	official	official	NNS	NNS
+3	declined	decline	decline	VBD	VBD
+4	to	to	to	TO	TO
+5	comment	comment	comment	VB	VB
+6	.	.	.	.	.
+
+1	It	it	it	PRP	PRP
+2	was	be	be	VBD	VBZ
+3	herd	herd	herd	NN	VBG
+4	instinct	instinct	instinct	NN	NNS
+5	.	.	.	.	.
+6	''	''	''	''	''
+
+1	Friday	friday	friday	NNP	NNP
+2	's	's	's	POS	POS
+3	Market	market	market	NNP	NN
+4	Activity	activity	activity	NNP	NNS
+
+1	Bond	bond	bond	NN	NNS
+2	prices	price	price	NNS	NNS
+3	barely	barely	barely	RB	RB
+4	budged	budge	budge	VBD	VB
+5	until	until	until	IN	IN
+6	midday	midday	midday	NN	NN
+7	.	.	.	.	.
+
+1	Roger	roger	roger	NNP	NNP
+2	Lowenstein	lowenstein	lowenstein	NNP	null
+3	contributed	contribute	contribute	VBD	VBD
+4	to	to	to	TO	TO
+5	this	this	this	DT	DT
+6	article	article	article	NN	NN
+7	.	.	.	.	.
+
+1	Congratulations	congratulations	congratulations	UH	null
+2	,	,	,	,	,
+3	Mr.	mr.	mr.	NNP	NNP
+4	Secretary	secretary	secretary	NN	NN
+5	and	and	and	CC	CC
+6	Mr.	mr.	mr.	NNP	NNS
+7	Congressman	congressman	congressman	NN	.
+
+1	They	they	they	PRP	PRP
+2	are	be	be	VBP	VBZ
+3	better	better	better	RB	JJR
+4	capitalized	capitalize	capitalize	VBN	VBG
+5	.	.	.	.	.
+
+1	The	the	the	DT	DT
+2	Fed	fed	fed	NNP	NNP
+3	promises	promise	promise	VBZ	VBN
+4	any	any	any	DT	DT
+5	needed	need	need	VBN	VBP
+6	liquidity	liquidity	liquidity	NN	NN
+7	.	.	.	.	.
+
+1	As	as	as	IN	IN
+2	for	for	for	IN	IN
+3	Mr.	mr.	mr.	NNP	NNP
+4	Papandreou	papandreou	papandreou	NNP	null
+5	?	?	?	.	.
+
+1	Markets	market	market	NNS	NN
+2	--	--	--	:	:
+
+1	Stocks	stocks	stocks	NNS	NNS
+2	:	:	:	:	:
+3	Volume	volume	volume	NN	NN
+4	251,170,000	251,170,000	251,170,000	CD	null
+5	shares	share	share	NNS	NNS
+6	.	.	.	.	.
+
+1	HOUSTON	houston	houston	NNP	NNP
+2	-	-	-	NNP	HYPH
+3	CALGARY	calgary	calgary	NNP	NNP
+4	ALLIANCE	alliance	alliance	NNP	NN
+5	:	:	:	:	:
+
+1	FCC	fcc	fcc	NNP	NNP
+2	COUNSEL	counsel	counsel	NN	VBG
+3	JOINS	join	join	VBZ	VB
+4	FIRM	firm	firm	NN	JJR
+5	:	:	:	:	:
+
+1	He	he	he	PRP	PRP
+2	left	leave	leave	VBD	VBN
+3	the	the	the	DT	DT
+4	company	company	company	NN	NN
+5	in	in	in	IN	IN
+6	1987	1987	1987	CD	CD
+7	.	.	.	.	.
+
+1	It	it	it	PRP	PRP
+2	will	will	will	MD	MD
+3	have	have	have	VB	VBP
+4	its	its	its	PRP$	PRP$
+5	headquarters	headquarters	headquarters	NNS	NNS
+6	in	in	in	IN	IN
+7	Munich	munich	munich	NNP	NNP
+8	.	.	.	.	.
+
+1	Siemens	siemens	siemens	NNP	NNP
+2	will	will	will	MD	MD
+3	retain	retain	retain	VB	VB
+4	majority	majority	majority	NN	NN
+5	voting	vote	voting	VBG	VB
+6	rights	right	right	NNS	NNPS
+7	.	.	.	.	.
+
+1	The	the	the	DT	DT
+2	company	company	company	NN	NN
+3	did	do	do	VBD	VBP
+4	n't	not	not	RB	RB
+5	elaborate	elaborate	elaborate	VBP	VB
+6	.	.	.	.	.
+
+1	Office	office	office	NN	NN
+2	construction	construction	construction	NN	NN
+3	dropped	drop	drop	VBD	VBD
+4	97	97	97	CD	CD
+5	%	%	%	NN	NIL
+6	.	.	.	.	.
+
+1	Manufacturers	manufacturer	manufacturer	NNS	NNPS
+2	are	be	be	VBP	VBZ
+3	upgrading	upgrade	upgrade	VBG	VBG
+4	standby	standby	standby	NN	NN
+5	power	power	power	NN	NN
+6	plants	plant	plant	NNS	NNS
+7	.	.	.	.	.
+
+1	Indeed	indeed	indeed	RB	UH
+2	it	it	it	PRP	PRP
+3	is	be	be	VBZ	VBZ
+4	.	.	.	.	.
+
+1	Six	six	six	CD	CD
+2	years	years	years	NNS	NNS
+3	ago	ago	ago	IN	RB
+4	they	they	they	PRP	PRP
+5	were	be	be	VBD	VBZ
+6	tantalizingly	tantalizingly	tantalizingly	RB	null
+7	close	close	close	JJ	VBD
+8	.	.	.	.	.
+
+1	The	the	the	DT	DT
+2	FCC	fcc	fcc	NNP	NNP
+3	effort	effort	effort	NN	NNS
+4	collapsed	collapse	collapse	VBD	VBD
+5	.	.	.	.	.
+
+1	There	there	there	EX	EX
+2	's	be	be	VBZ	VBZ
+3	no	no	no	DT	UH
+4	turning	turn	turning	VBG	VB
+5	back	back	back	NN	RP
+6	.	.	.	.	.
+7	''	''	''	''	''
 

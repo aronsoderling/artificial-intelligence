@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -33,7 +34,7 @@ public class Main {
 		/*args[0] = "noisy";
 		args[1] = "corpus-train-pos.txt";
 		//args[2] = "that round table might collapse";
-		args[2] = "one-line.txt";
+		args[2] = "corpus-development-pos.txt";
 		args[3] = "8";
 		args[4] = "huhu.flexa";*/
 		
@@ -43,7 +44,9 @@ public class Main {
 		args[3] = "5";
 		args[4] = "huhu.flexa";*/
 		
-		if(args[0].equals("eval")){
+		if(args.length < 1){
+			printUsage();
+		}else if(args[0].equals("eval")){
 			TreeMap<String, Double> map = U.evaluateTagger(args[1]);
 			for (Entry<String, Double> e : map.entrySet()) {
 				System.out.println(e.getKey()+":"+e.getValue());
@@ -98,17 +101,44 @@ public class Main {
 				BufferedReader reader = U.getReader(args[2]);
 				PrintWriter writer = U.getWriter(args[4]);
 				while(true){
-					ArrayList<String> sentence = U.readSentence(reader, Integer.parseInt(args[3])); //"that round table might collapse";
+					ArrayList<String> sentence = new ArrayList<String>(); 
+					ArrayList<String> sentenceLine = U.readSentenceLine(reader, Integer.parseInt(args[3])); 
+
+					for (String s : sentenceLine) {
+						String[] split2 = s.split("\t");
+						sentence.add(split2[U.LEMMA]);
+					}
+					
 					if(sentence.size() == 0){
 						break;
 					}
+					
 					LinkedHashMap<String, TreeMap<String, Double>> table = null;
 					table = NoisyChannelTagger.generateTable(sentence.toArray(new String[0]), pwt);
 
 					LinkedHashMap<String, String> optimalPath = NoisyChannelTagger.exhaustiveSearch(table);
 					//System.out.println("Table: "+table);
-					System.out.println("Exhaustive search optimal path: "+optimalPath);	
+					//writer.println("Exhaustive search optimal path: "+optimalPath);	
+					
+					int i = 0;
+					String[] line = new String[table.size()];
+					for (Entry<String, String> s : optimalPath.entrySet()) {
+						String[] split2 = sentenceLine.get(i).split("\t");
+						split2[U.PPOS] = optimalPath.get(s.getKey());
+						sentence.add(split2[U.LEMMA]);
+						line[i] = "";
+						for(String s2 : split2){
+							line[i] += (!line[i].equals("") ? "\t" : "" ) + s2;
+						}
+						i++;
+					}
+					
+					for (String l : line) {
+						writer.println(l);
+					}
+					writer.println();
 				}
+				writer.close();
 			}
 			//System.out.println(table);			
 		}else if(args[0].equals("viterbi")){
@@ -178,6 +208,27 @@ public class Main {
 	}
 
 	private static void printUsage() {
-		System.out.println("Syntax error");
+		String usage = "Usage:\n"+
+		"cd /h/d7/c/adi10nst/eda132a4\n"+
+		"java -jar a4.jar <program> <arguments>\n\n"+
+		
+		"java -jar a4.jar eval <set>\n"+
+		"java -jar a4.jar count <train-set> POS\n"+
+		"java -jar a4.jar confusion <set>\n"+
+		"java -jar a4.jar baseline <train-set> <development-set> <out-file>\n"+
+		"java -jar a4.jar bigrams <development-set>\n"+
+		"java -jar a4.jar noisy <train-set> < <sentence> || <filename> <max-words> <outfile> >\n"+
+		"java -jar a4.jar viterbi <train-set> <set> <max-words> <outfile>\n\n"+
+		
+		"Examples:\n"+
+		"java -jar a4.jar eval ~/infile.txt\n"+
+		"java -jar a4.jar count corpus-train-pos.txt POS\n"+
+		"java -jar a4.jar confusion corpus-development-pos.txt\n"+
+		"java -jar a4.jar baseline corpus-train-pos.txt corpus-development-pos.txt ~/outfile.txt\n"+
+		"java -jar a4.jar bigrams corpus-development-pos.txt\n"+
+		"java -jar a4.jar noisy corpus-train-pos.txt \"that round table might collapse\"\n"+
+		"java -jar a4.jar noisy corpus-train-pos.txt corpus-development-pos.txt 8 ~/outfile.txt\n"+
+		"java -jar a4.jar viterbi corpus-train-pos.txt corpus-test-words.txt 5 ~/outfile.txt";
+		System.out.println(usage);
 	}
 }
